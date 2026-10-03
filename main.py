@@ -184,7 +184,7 @@ Examples:
 def _health_server(config, db):
     import http.server
     import json as json_mod
-    port = int(os.environ.get("PORT") or config.get("web_ui", {}).get("port", 5000))
+    port = int(os.environ.get("PORT", 10000)) + 1
 
     class HealthHandler(http.server.BaseHTTPRequestHandler):
         def do_GET(self):
